@@ -1,13 +1,13 @@
 <template>
   <div class="ui secondary pointing menu">
-    <router-link to="/" class="item">Image Storage</router-link>
+    <router-link to="/" class="item Header-Text">Image Storage</router-link>
     <div class="right menu">
       <div v-if="isLoggedIn" class="horizontal">
-        <router-link to="/" class="item">Galleries</router-link>
-        <router-link to="upload" class="item">Upload</router-link>
-        <a class="item" @click="logout">Logout</a>
+        <router-link to="/" class="item Header-Text">Galleries</router-link>
+        <router-link to="upload" class="item Header-Text">Upload</router-link>
+        <a class="item Header-Text" @click="logout">Logout</a>
       </div>
-      <a v-else href="#" class="ui item" @click="login">Login</a>
+      <a v-else href="#" class="ui item Header-Text" @click="login">Login</a>
     </div>
   </div>
 </template>
@@ -28,5 +28,9 @@ export default {
 <style scoped>
 .horizontal {
   display: flex;
+}
+.Header-Text {
+  font-size: 20px;
+  font-weight: bold !important;
 }
 </style>

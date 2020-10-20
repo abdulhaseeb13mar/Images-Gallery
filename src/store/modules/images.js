@@ -1,6 +1,4 @@
-// import api from "../../api/imgur";
-// import qs from "qs";
-// import { router } from "../../main";
+import { router } from "../../main";
 import api from "../../api/imgur";
 
 const state = {
@@ -25,7 +23,11 @@ const actions = {
     console.log(response);
     commit("setImages", response.data.data);
   },
-  uploadImage: function() {},
+  uploadImages: async function({ rootState }, event) {
+    const images = event.target.files;
+    await api.upload(images, rootState.auth.token);
+    router.push("/");
+  },
 };
 
 export default {
